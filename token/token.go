@@ -16,5 +16,19 @@ const (
 	INT = "INT"
 
 	// Operators
-	ASSIGN = "ASSIGN"
+	ASSIGN = "="
+	PLUS = "+"
+
+	// Delimiters
+	COMMA = ","
+	SEMICOLON = ";"
+
+	LPAREN = "("
+	RPAREN = ")"
+	LBRACE = "{"
+	RBRACE = "}"
+
+	// Keywords
+	FUNCTION = "FUNCTION"
+	LET = "LET"
 )
