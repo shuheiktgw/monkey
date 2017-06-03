@@ -1,6 +1,8 @@
 package lexer
 
-import "../token"
+import (
+	"../token"
+)
 
 type Lexer struct {
 	input string
@@ -116,5 +118,13 @@ func isDigit(ch byte) bool {
 func (l *Lexer) skipWhitespace() {
 	for l.ch == ' ' || l.ch == '\t' || l.ch == '\n' || l.ch == '\r' {
 		l.readChar()
+	}
+}
+
+func (l *Lexer) peekChar() byte{
+	if l.readPosition >= len(l.input) {
+		return 0
+	} else {
+		return l.input[l.readPosition]
 	}
 }
