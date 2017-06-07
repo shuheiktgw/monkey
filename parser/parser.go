@@ -40,11 +40,11 @@ func New(l *lexer.Lexer) *Parser {
 		errors: []string{},
 	}
 
+	p.nextToken()
+	p.nextToken()
+
 	p.prefixParseFns = make(map[token.TokenType]prefixParseFn)
 	p.registerPrefix(token.IDENT, p.parseIdentifier)
-
-	p.nextToken()
-	p.nextToken()
 
 	return p
 }
