@@ -1,9 +1,9 @@
 package parser
 
 import (
-	"testing"
 	"../ast"
 	"../lexer"
+	"testing"
 	"fmt"
 )
 
@@ -199,7 +199,7 @@ func TestParsingPrefixExpressions(t *testing.T) {
 			if exp.Operator != tt.operator {
 				t.Fatalf("exp.Operator is not '%s'. got=%s", tt.operator, exp.Operator)
 
-				if !testIntgerLiteral(t, exp.Rignht, tt.integerValue) {
+				if !testIntegerLiteral(t, exp.Right, tt.integerValue) {
 					return
 				}
 			}
@@ -207,7 +207,7 @@ func TestParsingPrefixExpressions(t *testing.T) {
 	}
 }
 
-func testIntgerLiteral (t *testing.T, il ast.Expression, value int64) bool {
+func testIntegerLiteral (t *testing.T, il ast.Expression, value int64) bool {
 	integ, ok := il.(*ast.IntegerLiteral)
 
 	if !ok {
